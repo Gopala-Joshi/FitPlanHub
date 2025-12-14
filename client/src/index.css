@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Inter:wght@300;400;600&display=swap');
+
+:root {
+  --primary: #e67e22;
+  --dark: #050505;
+  --card: #0f0f0f;
+  --text: #eaeaea;
+  --border: #222;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background-color: var(--dark);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, .brand, button {
+  font-family: 'Russo One', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+a { text-decoration: none; color: inherit; }
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background: rgba(0, 0, 0, 0.9);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-group { display: flex; gap: 2rem; align-items: center; }
+.nav-link { color: #888; font-size: 0.9rem; transition: 0.2s; }
+.nav-link:hover { color: white; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.card:hover { transform: translateY(-5px); border-color: var(--primary); }
+
+input, select, textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 1rem;
+  background: #111;
+  border: 1px solid #333;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+}
+input:focus, textarea:focus { border-color: var(--primary); }
+
+button {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: white;
+  padding: 12px 30px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+button:hover { background: var(--primary); color: black; box-shadow: 0 0 20px rgba(230, 126, 34, 0.4); }
+
+.locked-box {
+  border: 1px solid #2ecc71;
+  background: rgba(46, 204, 113, 0.05);
+  padding: 2rem;
+  margin-top: 2rem;
+}
