@@ -41,12 +41,11 @@ FitPlanHub/
 * MongoDB
 
 ### 1. Setup Backend (Server)
-```bash
+bash
 cd server
 npm install
 npm start
 Server runs on: http://localhost:5000 (Note: Database connection is configured internally in server.js)
----
 
 2. Setup Frontend (Client)
 Open a new terminal:
@@ -76,7 +75,7 @@ GET /users/:id - Get user profile and following list.
 
 PUT /users/:id/follow - Follow or Unfollow a trainer.
 
-🗄️ Database Design (Schema)
+Database Design (Schema)
 User Schema:
 
 _id: ObjectId
