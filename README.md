@@ -18,8 +18,6 @@ A MERN stack fitness marketplace platform connecting trainers and trainees. User
 * **Database:** MongoDB (Mongoose ODM).
 
 ---
-
-## 📂 Project Structure
 ## 📂 Project Structure
 
 ```text
@@ -48,6 +46,7 @@ cd server
 npm install
 npm start
 Server runs on: http://localhost:5000 (Note: Database connection is configured internally in server.js)
+---
 
 2. Setup Frontend (Client)
 Open a new terminal:

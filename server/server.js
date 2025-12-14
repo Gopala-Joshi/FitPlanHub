@@ -17,7 +17,7 @@ app.use(cors({
 app.use(express.json());
 
 mongoose
-  .connect("mongodb+srv://joshigopala227_db_user:t78Jg2hkP5OyJsSa@cluster0.eyocx9z.mongodb.net/fitplanhub?appName=Cluster0")
+  .connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.error("DB Connection Error:", err));
 
@@ -28,8 +28,6 @@ app.get("/", (req, res) => {
 app.use("/auth", authRoutes);
 app.use("/plans", planRoutes);
 app.use("/users", userRoutes);
-
-const PORT = 5000;
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
-});
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+  console.log(` Server running on port ${PORT}`);

@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "0310149e-807d-4398-8c28-f359b8d6e9d5",
+		"name": "FitHub Postman Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50799249",
+		"_collection_link": "https://joshigopala227-8736355.postman.co/workspace/Gopala-Joshi's-Workspace~cf0f0135-5305-4725-870e-499dc0c2d0ed/collection/50799249-0310149e-807d-4398-8c28-f359b8d6e9d5?action=share&source=collection_link&creator=50799249"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5M2U5YWUyMzI5MjNhZWFmODhhOWViNyIsInJvbGUiOiJUUkFJTkVSIiwiaWF0IjoxNzY1NzEzMjM0LCJleHAiOjE3NjYzMTgwMzR9.UMErG2QW3uQJ0XaNMUE8Ll8gAQidhNj3NCt5RKNWwDk",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"user@test.com\",\r\n  \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/auth/signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5M2U5YWUyMzI5MjNhZWFmODhhOWViNyIsInJvbGUiOiJUUkFJTkVSIiwiaWF0IjoxNzY1NzEzMjM0LCJleHAiOjE3NjYzMTgwMzR9.UMErG2QW3uQJ0XaNMUE8Ll8gAQidhNj3NCt5RKNWwDk",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"User One\",\r\n  \"email\": \"user@test.com\",\r\n  \"password\": \"123456\",\r\n  \"role\": \"USER\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/plans",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5M2U5YWUyMzI5MjNhZWFmODhhOWViNyIsInJvbGUiOiJUUkFJTkVSIiwiaWF0IjoxNzY1NzEzMjM0LCJleHAiOjE3NjYzMTgwMzR9.UMErG2QW3uQJ0XaNMUE8Ll8gAQidhNj3NCt5RKNWwDk",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Fat Loss Beginner\",\r\n  \"shortDescription\": \"Beginner friendly fat loss plan\",\r\n  \"price\": 499,\r\n  \"duration\": \"30 days\",\r\n  \"fullDescription\": \"Detailed fat loss plan with workouts and diet\",\r\n  \"workoutPlan\": [\r\n    { \"day\": 1, \"exercises\": [\"Jumping Jacks\", \"Pushups\"] },\r\n    { \"day\": 2, \"exercises\": [\"Squats\", \"Plank\"] }\r\n  ],\r\n  \"dietPlan\": [\r\n    { \"day\": 1, \"meals\": [\"Oats\", \"Fruit\"] },\r\n    { \"day\": 2, \"meals\": [\"Dal\", \"Rice\", \"Salad\"] }\r\n  ],\r\n  \"trainerId\": \"693e9ae232923aeaf88a9eb7\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/plans",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"plans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
