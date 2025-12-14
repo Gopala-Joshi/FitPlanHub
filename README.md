@@ -32,7 +32,7 @@ FitPlanHub/
 │   └── index.js            # Server Entry Point
 │
 └── README.md
----
+```
 
 ## Setup & Installation
 
@@ -41,55 +41,82 @@ FitPlanHub/
 * MongoDB
 
 ### 1. Setup Backend (Server)
-bash
+```bash
 cd server
 npm install
 npm start
+```
 Server runs on: http://localhost:5000 (Note: Database connection is configured internally in server.js)
 
 2. Setup Frontend (Client)
 Open a new terminal:
 
-Bash
+```bash
 
 cd client
 npm install
 npm run dev
+```
 Client runs on: http://localhost:5173
+## API Design & Endpoints
 
-API Design & Endpoints
-Authentication
-POST /auth/register - Create a new user/trainer.
+### Authentication
 
-POST /auth/login - Authenticate and receive Token.
+- **POST `/auth/register`**  
+  Create a new user or trainer.
 
-Plans
-GET /plans - Fetch all available workout plans.
+- **POST `/auth/login`**  
+  Authenticate and receive an access token.
 
-GET /plans/:id - Get details of a specific plan.
+---
 
-POST /plans - (Trainers only) Create a new workout plan.
+### Plans
 
-Users / Social
-GET /users/:id - Get user profile and following list.
+- **GET `/plans`**  
+  Fetch all available workout plans.
 
-PUT /users/:id/follow - Follow or Unfollow a trainer.
+- **GET `/plans/:id`**  
+  Get details of a specific plan.
 
-Database Design (Schema)
-User Schema:
+- **POST `/plans`** *(Trainers only)*  
+  Create a new workout plan.
 
-_id: ObjectId
+---
 
-name, email, password: String
+### Users & Social
 
-following: Array of ObjectIds (Ref: User)
+- **GET `/users/:id`**  
+  Get user profile details along with the following list.
 
-Plan Schema:
+- **PUT `/users/:id/follow`**  
+  Follow or unfollow a trainer.
 
-_id: ObjectId
+---
 
-title, description, price: String
+## Database Design (Schema)
 
-trainer: ObjectId (Ref: User)
+### User Schema
 
-dietPlan, workoutPlan: Array of Objects
+```js
+{
+  _id: ObjectId,
+  name: String,
+  email: String,
+  password: String,
+  following: [ObjectId] // Reference: User
+}
+```
+### Plan Schema
+```js
+{
+  _id: ObjectId,
+  title: String,
+  description: String,
+  price: String,
+  trainer: ObjectId, // Reference: User
+  dietPlan: [Object],
+  workoutPlan: [Object]
+}
+```
+
+
